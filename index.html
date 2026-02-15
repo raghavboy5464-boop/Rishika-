@@ -1,126 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rishika Forever ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Ankita ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700&display=swap');
 
-<style>
-body {
-    margin: 0;
-    font-family: cursive;
-    background: linear-gradient(135deg,#ff4e8d,#ff99c8);
-    text-align: center;
-    color: white;
-    overflow: hidden;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            font-family: 'Nunito', sans-serif;
+            overflow: hidden; 
+            text-align: center;
+        }
 
-.container {
-    padding: 30px;
-}
+        .container {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 105, 135, 0.3);
+            max-width: 400px;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
 
-img {
-    width: 220px;
-    border-radius: 20px;
-    margin-top: 15px;
-    box-shadow: 0 0 20px white;
-}
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #d81b60;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
 
-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 30px;
-    border: none;
-    margin: 15px;
-    cursor: pointer;
-}
+        img {
+            max-width: 100%;
+            max-height: 280px; /* Ensures your photo doesn't stretch off the screen */
+            object-fit: cover; /* Keeps the photo looking nice without squishing */
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
 
-#yesBtn {
-    background: #ff2e63;
-    color: white;
-}
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            height: 50px; 
+        }
 
-#noBtn {
-    position: absolute;
-    background: white;
-    color: #ff2e63;
-}
+        button {
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            font-family: 'Nunito', sans-serif;
+        }
 
-.love-message {
-    display: none;
-    margin-top: 20px;
-    font-size: 20px;
-}
+        #yesBtn {
+            background-color: #ff4757;
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+        }
 
-.heart {
-    position: absolute;
-    font-size: 22px;
-    animation: floatUp 4s linear infinite;
-}
+        #yesBtn:hover {
+            transform: scale(1.1);
+        }
 
-@keyframes floatUp {
-    0% {transform: translateY(100vh); opacity: 1;}
-    100% {transform: translateY(-10vh); opacity: 0;}
-}
-</style>
+        #noBtn {
+            background-color: #f1f2f6;
+            color: #2f3542;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: absolute; 
+            left: 55%; 
+        }
+
+        #successMessage {
+            display: none;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #ff4757;
+            animation: floatUp 4s ease-in forwards;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+    </style>
 </head>
-
 <body>
 
-<audio autoplay loop>
-  <source src="song.mp3" type="audio/mpeg">
-</audio>
-
-<div class="container">
-    <h1>Dear Ankita ❤️</h1>
-    <h2>You make my world beautiful.</h2>
-
-    <img src="IMG_20260204_145646586_HDR_PCT.jpg",alt="Rishika">
-
-    <h2>Will you be my Valentine</h2>
-    <h1>Forever & Always? 💍</h1>
-
-    <button id="yesBtn">Yes ❤️</button>
-    <button id="noBtn">No 🙈</button>
-
-    <div class="love-message" id="loveMessage">
-        Ankita, you just made Rishab the happiest man alive! 💖<br><br>
-        Rishab + Ankita = <b>RISHIKA</b> ❤️<br><br>
-        Forever starts today.
+    <div class="container" id="questionBox">
+        <img src="IMG_20260204_145646586_HDR_PCT.jpg" alt="Rishab and Ankita">
+        <h1>Ankita, will you be my Valentine forever and always together? ❤️</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes!</button>
+            <button id="noBtn">No</button>
+        </div>
     </div>
-</div>
 
-<script>
-const noBtn = document.getElementById("noBtn");
-const yesBtn = document.getElementById("yesBtn");
-const loveMessage = document.getElementById("loveMessage");
+    <div class="container" id="successMessage">
+        <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Bears kissing">
+        <h1>I knew you'd say Yes! 🥰</h1>
+        <p style="color: #d81b60; font-size: 1.5rem; font-weight: bold; font-family: 'Dancing Script', cursive;">Rishika forever! 💕</p>
+    </div>
 
-noBtn.addEventListener("touchstart", moveButton);
-noBtn.addEventListener("mouseover", moveButton);
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const questionBox = document.getElementById('questionBox');
+        const successMessage = document.getElementById('successMessage');
 
-function moveButton() {
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-}
+        const moveButton = () => {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40);
+            
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = `${Math.max(20, x)}px`;
+            noBtn.style.top = `${Math.max(20, y)}px`;
+        };
 
-yesBtn.addEventListener("click", function() {
-    loveMessage.style.display = "block";
-    createHearts();
-});
+        noBtn.addEventListener('mouseover', moveButton);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); 
+            moveButton();
+        });
 
-function createHearts() {
-    for (let i = 0; i < 40; i++) {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 4000);
-    }
-}
-</script>
+        yesBtn.addEventListener('click', () => {
+            questionBox.style.display = 'none';
+            successMessage.style.display = 'block';
+            createHearts();
+        });
 
+        function createHearts() {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '❤️';
+                    heart.classList.add('heart');
+                    
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                    heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+                    
+                    document.body.appendChild(heart);
+
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 5000);
+                }, i * 100);
+            }
+        }
+    </script>
 </body>
 </html>
